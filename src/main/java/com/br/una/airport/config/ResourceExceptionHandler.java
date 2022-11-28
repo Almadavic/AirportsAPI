@@ -2,7 +2,6 @@ package com.br.una.airport.config;
 
 import com.br.una.airport.service.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.mapping.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestControllerAdvice
 @RequiredArgsConstructor
-public class ResourceExceptionHandler {
+public class ResourceExceptionHandler { // Classe é responsável por retornar uma mensagem mais amigável (legível) para o client.
 
     @ExceptionHandler(value = ResourceNotFoundException.class)
     public ResponseEntity<StandardError> resourceNotFound(ResourceNotFoundException exception, HttpServletRequest request) {

@@ -6,7 +6,7 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 @SpringBootApplication
 @EnableSpringDataWebSupport
-public class AirportApplication {
+public class AirportApplication { // É onde inicia o programa.
 
 	public static void main(String[] args) {
 		SpringApplication.run(AirportApplication.class, args);

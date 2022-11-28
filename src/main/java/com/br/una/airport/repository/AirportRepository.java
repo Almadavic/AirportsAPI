@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Repository
-public interface AirportRepository extends JpaRepository<Airport, Long> {
+public interface AirportRepository extends JpaRepository<Airport, Long> { // O repositório liga a minha aplicação com o banco de dados.
     Optional<Airport> findByIataCode(String iata);
 
     @Transactional

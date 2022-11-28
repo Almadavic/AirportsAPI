@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "tb_airports")
 @Getter
 @Setter
-public class Airport {
+public class Airport { // É uma entidade, (MODELO) "É a classe que representa uma tabela do banco de dados".
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

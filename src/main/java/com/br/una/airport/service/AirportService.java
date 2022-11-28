@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class AirportService {
+public class AirportService { // É a classe que é chamada pelo controller e busca as informações do repository. Classe onde é desenvolvida a lógica.
 
     private final AirportRepository airportRepository;
 

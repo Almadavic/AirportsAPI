@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @NoArgsConstructor
-public class AirportRequestDTO {
+public class AirportRequestDTO {     // DTO é utilizado para converter dados do banco de dados e/ou limitar para retornar ao client.
 
     @NotNull
     private String airportName;

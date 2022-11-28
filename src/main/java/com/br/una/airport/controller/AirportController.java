@@ -16,13 +16,13 @@ import java.net.URI;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "/v1/aeroportos")
+@RequestMapping(value = "/v1/aeroportos") // Controller -> Essa é a classe responsável por receber a requisição e retornar uma resposta para o client com os end-points.
 public class AirportController {
 
    private final AirportService airportService;
 
    @GetMapping
-   public ResponseEntity<Page<AirportResponseDTO>> findAll(Pageable pageable) {
+   public ResponseEntity<Page<AirportResponseDTO>> findAll(Pageable pageable) { // END-POINT que me retorna uma página com uma lista de aeroportos.
 
        Page<AirportResponseDTO> airports = airportService.findAll(pageable);
 
@@ -30,7 +30,7 @@ public class AirportController {
    }
 
    @GetMapping(value = "/{iata}")
-    public ResponseEntity<AirportResponseDTO> findByIataCode(@PathVariable String iata) {
+    public ResponseEntity<AirportResponseDTO> findByIataCode(@PathVariable String iata) { // END-POINT que me retorna um aeroporto baseado no código IATA
 
        AirportResponseDTO airportDTO = airportService.findByIataCode(iata);
 
@@ -38,7 +38,7 @@ public class AirportController {
    }
 
     @PostMapping
-    public ResponseEntity<AirportResponseDTO> save(@RequestBody @Valid AirportRequestDTO airportDTO, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<AirportResponseDTO> save(@RequestBody @Valid AirportRequestDTO airportDTO, UriComponentsBuilder uriBuilder) { // END-POINT que salva um aeroporto no banco.
 
        AirportResponseDTO airportResponseDTO = airportService.save(airportDTO);
 
@@ -48,7 +48,7 @@ public class AirportController {
     }
 
     @PutMapping(value = "/{iata}")
-    public ResponseEntity<AirportResponseDTO> update(@RequestBody AirportRequestDTO airportDTO, @PathVariable String iata) {
+    public ResponseEntity<AirportResponseDTO> update(@RequestBody AirportRequestDTO airportDTO, @PathVariable String iata) { // END-POINT que atualiza um aeroporto no banco através do código IATA.
 
        AirportResponseDTO airportResponseDTO = airportService.update(airportDTO, iata);
 
@@ -56,7 +56,7 @@ public class AirportController {
     }
 
     @DeleteMapping(value = "/{iata}")
-    public ResponseEntity<String> delete(@PathVariable String iata) {
+    public ResponseEntity<String> delete(@PathVariable String iata) { // END-POINT que deleta um aeroporto no banco através do código IATA.
 
        String message = airportService.delete(iata);
 
